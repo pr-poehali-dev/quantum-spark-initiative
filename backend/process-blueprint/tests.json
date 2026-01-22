@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Process blueprint with valid image",
+      "method": "POST",
+      "body": {
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+      },
+      "expectedStatus": 200
+    },
+    {
+      "name": "Handle missing image data",
+      "method": "POST",
+      "body": {},
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
